@@ -1,0 +1,22 @@
+﻿<Window x:Class="Proyecto.Vistas.winAutorizacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto.Vistas"
+        mc:Ignorable="d"
+        Title="Autorizaciones." Height="600" Width="800" Icon="/Proyecto;component/Images/hospital (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Width="794" Margin="0,50,0,75"/>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="500,0,0,0">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,105,0" Height="50" ToolTip="Cancele la autorización seleccionada."/>
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="105,0,0,0" Height="50" Click="btnSalir_Click"/>
+        </Grid>
+        <Grid Height="50" VerticalAlignment="Top" Margin="0">
+            <Label Content="Autorización" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        </Grid>
+
+    </Grid>
+</Window>

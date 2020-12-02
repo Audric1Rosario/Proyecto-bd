@@ -1,0 +1,36 @@
+﻿<Window x:Class="Proyecto.Vistas.winCrearCentro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto.Vistas"
+        mc:Ignorable="d"
+        Title="Crear Centro" Height="480" Width="640" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Icon="/Proyecto;component/Images/hospital (1).png">
+    <Grid>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="0">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1"/>
+            <Button x:Name="btnCrear" Content="Crear" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,0,160,0" Height="50" Click="btnCrear_Click"/>
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="160,0,0,0" Height="50" Click="btnSalir_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Width="400" Margin="0,0,0,75">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+            <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
+            <Label Content="Provincia:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,55,0,0"/>
+            <Label Content="Municipio:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"/>
+            <Label Content="Plazas Disponibles:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,280,0,0"/>
+            <ListBox x:Name="lstMunicipio" Height="175" VerticalAlignment="Top" Margin="150,90,30,0"/>
+            <ComboBox x:Name="cbxProvincia" VerticalAlignment="Top" Margin="150,55,30,0" Height="25"/>
+            <TextBox x:Name="txtNombre" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,20,30,0" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtPlazas" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,280,30,0" VerticalContentAlignment="Center" PreviewTextInput="txtPlazas_PreviewTextInput"/>
+            <Label Content="N. Afiliación: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,315,0,0"/>
+            <ComboBox x:Name="cbxAfiliacion" VerticalAlignment="Top" Margin="150,315,30,0" Height="25"/>
+            <Button x:Name="btnSelect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="110,55,0,0" Height="25" Click="btnSelect_Click">
+                <Image Height="20" Width="20" Source="/Proyecto;component/Images/check-mark.png"/>
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Width="234" Margin="0,0,0,75">
+            <Image Margin="25" Source="/Proyecto;component/Images/hospital (3).png"/>
+        </Grid>
+
+    </Grid>
+</Window>

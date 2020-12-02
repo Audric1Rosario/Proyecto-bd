@@ -1,0 +1,46 @@
+﻿<Window x:Class="Proyecto.Vistas.winPaciente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto.Vistas"
+        mc:Ignorable="d"
+        Title="Lista de pacientes." Height="600" Width="800" ResizeMode="NoResize" Icon="/Proyecto;component/Images/hospital (1).png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="dataGrid" Width="400" HorizontalAlignment="Left" Margin="0,0,0,52"/>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="400,0,0,0">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1"/>
+            <Button x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,0,160,0" Height="50"/>
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="160,0,0,0" Height="50" Click="btnSalir_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Width="394" Margin="0,0,0,75">
+            <Grid Height="50" VerticalAlignment="Top" Margin="1,1,-1,0">
+                <Label Content="Información del cliente." HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+            </Grid>
+            <Grid Margin="0,50,0,0">
+                <Label Content="Cédula:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,87,0,0"/>
+                <Label Content="Nombre completo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,122,0,0"/>
+                <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,157,0,0"/>
+                <Label Content="Tipo de sangre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,192,0,0"/>
+                <TextBox x:Name="txtCobertura" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,87,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtTipoConsulta" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,122,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtFecha" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,157,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtMonto" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,192,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <Label Content="N. Afiliación" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,332,0,0"/>
+                <TextBox x:Name="txtAfiliacion" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,332,30,0" VerticalContentAlignment="Center" ToolTip="Modifique aquí para actualizar la afiliación del cliente."/>
+                <Label Content="Estado civil: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,262,0,0"/>
+                <TextBox x:Name="txtEstadoCivil" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,262,30,0" VerticalContentAlignment="Center" ToolTip="Modifique aquí para actualizar la afiliación del cliente." IsEnabled="False"/>
+                <Label Content="Tipo de plan:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,297,0,0"/>
+                <TextBox x:Name="txtPlan" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,297,30,0" VerticalContentAlignment="Center" ToolTip="Modifique aquí para actualizar la afiliación del cliente." IsEnabled="False"/>
+                <Label Content="Telefono:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,227,0,0"/>
+                <TextBox x:Name="txtTelefono" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,227,30,0" VerticalContentAlignment="Center" ToolTip="Modifique aquí para actualizar la afiliación del cliente." IsEnabled="False"/>
+            </Grid>
+        </Grid>
+        <Button x:Name="btnSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="20,0,0,10" VerticalAlignment="Bottom" Width="75" Height="25" ToolTip="Seleccione un procedimiento."/>
+        <ComboBox x:Name="cbxOpcion" Margin="115,0,0,10" VerticalAlignment="Bottom" Height="25" HorizontalAlignment="Left" Width="180"/>
+        <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="310,0,0,10" VerticalAlignment="Bottom" Width="75" Height="25" Click="btnBuscar_Click">
+            <Image Height="20" Width="20" Source="/Proyecto;component/Images/loupe.png"/>
+        </Button>
+
+    </Grid>
+</Window>

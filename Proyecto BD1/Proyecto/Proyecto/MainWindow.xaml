@@ -1,0 +1,65 @@
+﻿<Window x:Class="Proyecto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="480" Width="720" ResizeMode="NoResize" Icon="Images/first-aid-kit.png">
+    <!--Esto es para poder poner un placeholder-->
+    <Window.Resources>
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" 
+                                 HorizontalContentAlignment="Center" 
+                                 VerticalContentAlignment="Center"/>
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="LightGray"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        
+    </Window.Resources>
+    
+    <Grid>
+        <Grid Margin="200,50">
+            <Grid Height="50" VerticalAlignment="Bottom" Width="314">
+                <Button x:Name="btnIngresar" Content="Ingresar" Margin="20,5" Click="btnIngresar_Click"/>
+            </Grid>
+            <Grid Height="100" VerticalAlignment="Bottom" Width="314" Margin="0,0,0,50">
+                <TextBox Style="{StaticResource placeHolder}" Tag="Login ID" x:Name="txtloginid" TextWrapping="Wrap" Margin="10,10,10,55"/>
+                <PasswordBox x:Name="passlogin" Margin="10,55,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid Margin="0,0,0,150">
+                <Image x:Name="imguser" Source="Images/user.png" Margin="10"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

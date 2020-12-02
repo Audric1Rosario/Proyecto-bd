@@ -1,0 +1,44 @@
+﻿<Window x:Class="Proyecto.Vistas.winCrearAuto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto.Vistas"
+        mc:Ignorable="d"
+        Title="Validar Autorización" Height="598" Width="800" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" Icon="/Proyecto;component/Images/hospital (1).png">
+    <Grid>
+        <DataGrid x:Name="dataGrid" Width="385" HorizontalAlignment="Left" Margin="10,10,0,220"/>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="400,0,0,-2">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1"/>
+            <Button x:Name="btnValidar" Content="Validar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,0,160,0" Height="50" Click="btnValidar_Click"/>
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="160,0,0,0" Height="50" Click="btnSalir_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Width="394" Margin="0,0,0,73">
+            <Grid Height="50" VerticalAlignment="Top" Margin="1,1,-1,0">
+                <Label Content="Información de Procedimiento." HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+            </Grid>
+            <Grid Margin="0,50,0,0">
+                <Label Content="Cobertura:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
+                <Label Content="Tipo de Procedimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,55,0,0"/>
+                <Label Content="Fecha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"/>
+                <Label Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0"/>
+                <Label Content="Medicamento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,390,0,0"/>
+                <TextBox x:Name="txtCobertura" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,20,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtTipoConsulta" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,55,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtFecha" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,90,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtMedicamento" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,390,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtDescripcion" Margin="150,160,30,75" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MaxLength="256" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+        <Button x:Name="btnSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="20,0,20,10" VerticalAlignment="Bottom" Width="75" Height="25" ToolTip="Seleccione un procedimiento." Click="btnSeleccionar_Click"/>
+        <ComboBox x:Name="cbxCentro" HorizontalAlignment="Left" Margin="20,384,0,0" VerticalAlignment="Top" Width="150" Height="25"/>
+        <ComboBox x:Name="cbxMedico" HorizontalAlignment="Left" Margin="223,384,0,0" VerticalAlignment="Top" Width="150" Height="25" ToolTip="Escoja el doctor."/>
+        <ComboBox x:Name="cbxProcedimiento" HorizontalAlignment="Left" Margin="20,446,0,0" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False"/>
+        <Label Content="Centro Medico." HorizontalAlignment="Left" Margin="20,354,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Procedimiento" HorizontalAlignment="Left" Margin="20,415,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Codigo Paciente" HorizontalAlignment="Left" Margin="223,415,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Codigo médico." HorizontalAlignment="Left" Margin="223,353,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbxPaciente" HorizontalAlignment="Left" Margin="223,446,0,0" VerticalAlignment="Top" Width="150" Height="25" ToolTip="Escoja el doctor."/>
+
+    </Grid>
+</Window>

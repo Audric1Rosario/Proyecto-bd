@@ -1,0 +1,58 @@
+﻿<Window x:Class="Proyecto.Vistas.winCrearConsulta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto.Vistas"
+        mc:Ignorable="d"
+        Title="Crear Procedimiento" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Icon="/Proyecto;component/Images/hospital (1).png">
+    <Grid>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="400,0,0,0">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1"/>
+            <Button x:Name="btnCrear" Content="Crear" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0,0,160,0" Height="50" Click="btnCrear_Click"/>
+            <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="160,0,0,0" Height="50" Click="btnSalir_Click"/>
+        </Grid>
+        <Grid Margin="0" Width="400" HorizontalAlignment="Left">
+            <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+            <Label Content="Buscar paciente: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
+            <TextBox x:Name="txtBuscar" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,20,60,0" VerticalContentAlignment="Center" ToolTip="Ingrese cédula del cliente" PreviewTextInput="txtBuscar_PreviewTextInput" MaxLength="11"/>
+            <Button x:Name="btnBuscar" VerticalAlignment="Top" Margin="350,20,10,0" Height="25" Click="btnBuscar_Click">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Source="/Proyecto;component/Images/loupe.png"/>
+            </Button>
+            <ListBox x:Name="lstPacientes" Height="245" VerticalAlignment="Top" Margin="8,50,10,0"/>
+            <Grid Height="270" VerticalAlignment="Bottom">
+                <Button x:Name="btnSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="10,20,0,0" Height="25" Click="btnSeleccionar_Click"/>
+                <Label Content="Paciente:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="10,55,0,0"/>
+                <Label Content="Cédula: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"/>
+                <Label Content="Tipo de sangre: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,125,0,0"/>
+                <Label Content="Fecha nacimiento: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0"/>
+                <TextBox x:Name="txtNombrePaciente" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,55,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtCedulaPaciente" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,90,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtTipoSangre" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,125,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <TextBox x:Name="txtNacimPaciente" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,160,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+                <Label Content="N. Afiliación: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,195,0,0"/>
+                <TextBox x:Name="txtAfiliacion" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="120,195,30,0" VerticalContentAlignment="Center" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Width="394" Margin="0,0,0,75">
+            <Grid Height="50" VerticalAlignment="Top" Margin="1,1,-1,0">
+                <Label Content="Información de Procedimiento." HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+            </Grid>
+            <Grid Margin="0,50,0,0">
+                <Label Content="Cobertura:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0"/>
+                <Label Content="Tipo de Procedimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,55,0,0"/>
+                <Label Content="Fecha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"/>
+                <Label Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0"/>
+                <Label Content="Medicamento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,390,0,0"/>
+                <TextBox x:Name="txtCobertura" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,20,30,0" VerticalContentAlignment="Center" MaxLength="80"/>
+                <TextBox x:Name="txtTipoConsulta" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,55,30,0" VerticalContentAlignment="Center" MaxLength="80"/>
+                <TextBox x:Name="txtFecha" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,90,30,0" VerticalContentAlignment="Center" IsEnabled="False" MaxLength="80"/>
+                <TextBox x:Name="txtMedicamento" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,390,30,0" VerticalContentAlignment="Center" MaxLength="80"/>
+                <Label Content="Padecimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,355,0,0"/>
+                <TextBox x:Name="txtPadecimiento" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,355,30,0" VerticalContentAlignment="Center" MaxLength="120"/>
+                <TextBox x:Name="txtDescripcion" Margin="150,160,30,100" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MaxLength="256"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
